@@ -55,7 +55,15 @@ function JsxSample4() {
                 </tr>
             </thead>
             <tbody>
-
+                {
+                    categories.map(item => {
+                        return (<tr>
+                            <td>{item.id}</td>
+                            <td>{item.name}</td>
+                            <td>{item.description}</td>
+                        </tr>)
+                    })
+                }
             </tbody>
         </table>
     </>)
