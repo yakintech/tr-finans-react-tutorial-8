@@ -1,12 +1,13 @@
-import JsxSample3 from "./components/JsxSample3";
-import JsxSample4 from "./components/JsxSample4";
+import ProductDetail from "./propsSample/ProductDetail";
 
 
 function App() {
 
   return <>
-      <JsxSample4/>
+    <ProductDetail name='IPhone' price={3000} stock={20}/>
   </>
 }
 
 export default App;
+
+//props, useState, useEffect
