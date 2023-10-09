@@ -1,19 +1,10 @@
-import React from 'react';
-import Header from './components/Header';
-import Content from './components/Content';
-import Footer from './components/Footer';
-import JsxSample from './components/JsxSample';
+import JsxSample3 from "./components/JsxSample3";
 
 
 function App() {
 
-
-
   return <>
-       <Header></Header>
-       <Content></Content>
-       <Footer></Footer>
-       <JsxSample></JsxSample>
+      <JsxSample3/>
   </>
 }
 
