@@ -14,6 +14,8 @@ function StateObjectArraySample() {
     }
 
     return (<>
+        <button onClick={() => setcategories(categoriesData)}>Refresh</button>
+        
         <h1>Length: {categories.length}</h1>
         <ul>
             {
