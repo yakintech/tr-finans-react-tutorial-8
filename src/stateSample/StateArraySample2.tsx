@@ -8,12 +8,11 @@ function StateArraySample2() {
         //0 ile 1000 arasında Int bir random değer üretiyorum.
         var randomNumber = Math.floor(Math.random() * 1000)
 
-        numbers.push(randomNumber)
+        // numbers.push(randomNumber)
         // setnumbers([...numbers])
+        
 
-        var newNumbers = numbers;
-
-         setnumbers(newNumbers)
+         setnumbers([...numbers, randomNumber])
 
     }
 
