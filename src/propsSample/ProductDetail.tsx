@@ -20,7 +20,7 @@ function ProductDetail(props: ProductModel) {
 
 export default ProductDetail
 
-
+//props, state, effect
 
 
 
