@@ -40,3 +40,5 @@ export const categoriesData = [
         "name": "Seafood"
     }
 ]
+
+

@@ -1,12 +1,10 @@
-import StateArraySample2 from "./stateSample/StateArraySample2";
-import StateObjectArraySample from "./stateSample/StateObjectArraySample";
-
+import ProductsFavorites from "./stateSample/ProductsFavorites";
 
 function App() {
 
 
   return <>
-  <StateObjectArraySample/>
+  <ProductsFavorites/>
   </>
 }
 
