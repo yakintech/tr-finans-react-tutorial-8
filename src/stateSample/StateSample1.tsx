@@ -2,11 +2,11 @@ import React, { useState } from 'react'
 
 function StateSample1() {
 
-  
+
   //1. counter kullandığım değişkenimin adı
   //2. setcounter bu değişkeni DEĞİŞTİRECEK FONKSİYON
   //3. usestate içerisindeki 0 ise değişkenin default değeri
-  const [counter, setcounter] = useState(0);
+  const [counter, setcounter] = useState<number>(0);
 
   const increase = () => {
     setcounter(10)
