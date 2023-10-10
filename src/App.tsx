@@ -1,10 +1,11 @@
-import ProductsFavorites from "./stateSample/ProductsFavorites";
+
+import InputArraySample from "./typeStateSample/InputArraySample";
 
 function App() {
 
 
   return <>
-  <ProductsFavorites/>
+    <InputArraySample />
   </>
 }
 

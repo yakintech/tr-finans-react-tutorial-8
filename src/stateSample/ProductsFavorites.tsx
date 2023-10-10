@@ -1,4 +1,4 @@
-import React, { useRef, useState } from 'react'
+import React, { useState } from 'react'
 import { productsData } from '../data/productsData'
 
 function ProductsFavorites() {
@@ -6,10 +6,7 @@ function ProductsFavorites() {
     const [products, setproducts] = useState(productsData);
     const [favorites, setfavorites] = useState<any[]>([]);
 
-
-    var ref = useRef(null)
-
-    const add = (name: string, price: number, stock: number) => {
+    const add = (item: any) => {
 
 
         //ürünümün favorilerde olup olmadığını kontrol ediyorum. Eğer ürün favorilerde varsa ekleme yapmayacağım. Yoksa ekleyeceğim.
@@ -23,7 +20,7 @@ function ProductsFavorites() {
     }
 
 
-    const removeFav = (item: any) => {
+    const removeFav = (item : any) => {
 
         var filteredFavorites = favorites.filter(q => q.id != item.id);
 
@@ -40,8 +37,7 @@ function ProductsFavorites() {
                     products && products.map(item => {
                         return <>
                             <li>{item.name}   <button onClick={() => add(item)}>Add</button> </li>
-                            <span ref={ref}>{item.unitsInStock}</span>
-
+                          
 
                         </>
                     })
@@ -76,3 +72,6 @@ export default ProductsFavorites
 
 
 //FILTER, FIND
+
+
+
