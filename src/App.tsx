@@ -2,6 +2,7 @@ import { BrowserRouter, Link, Route, Routes } from "react-router-dom";
 import AxiosGetSample from "./apiOperations/AxiosGetSample";
 import FetchGetSample from "./apiOperations/FetchGetSample";
 import AboutPage from "./pages/AboutPage";
+import AddProductPage from "./pages/AddProductPage";
 import CategoryDetail from "./pages/CategoryDetail";
 import ContactPage from "./pages/ContactPage";
 import HomePage from "./pages/HomePage";
@@ -20,6 +21,8 @@ function App() {
           <li><Link to='/about'>About</Link></li>
           <li><Link to='/contact'>Contact</Link></li>
           <li><Link to='/products'>Products</Link></li>
+          <li><Link to='/products/add'>Add Product</Link></li>
+
 
       </ul>
 
@@ -31,6 +34,7 @@ function App() {
         <Route path='/categories/:id/:subid' element={<CategoryDetail/>} />
         <Route path="/products" element={<ProductsPage/>} />
         <Route path="/products/:id" element={<ProductDetailPage/>} />
+        <Route path="/products/add" element={<AddProductPage/>} />
 
         <Route path='*' element={<NotFound/>} />
 
