@@ -1,11 +1,10 @@
-import EffectSample1 from "./effectSample/EffectSample1";
-import StateArraySample3 from "./stateSample/StateArraySample3";
+import FetchGetSample from "./apiOperations/FetchGetSample";
 
 function App() {
 
 
   return <>
-  <EffectSample1/>
+  <FetchGetSample/>
   </>
 }
 
