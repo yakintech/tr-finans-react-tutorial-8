@@ -18,9 +18,22 @@ function AddProductPage() {
 
     const addProduct: SubmitHandler<Inputs> = (data) => {
 
-        axios.post('https://northwind.vercel.app/api/products', data)
-            .then(res => {
-                console.log('Response', res);
+        // axios.post('https://northwind.vercel.app/api/products', data)
+        //     .then(res => {
+        //         console.log('Response', res);
+        //     })
+
+        fetch('https://northwind.vercel.app/api/products', {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify(data),
+        })
+            .then(res => res.json())
+            .then(data => {
+                console.log('DATA', data);
+
             })
 
     }

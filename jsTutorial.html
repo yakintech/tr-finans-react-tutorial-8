@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Çağatay</h1>
+    <button onclick="change()">Change</button>
+</body>
+<script>
+
+    function change() {
+        document.querySelector('h1').innerText = "İstanbul";
+    }
+
+
+    //spread
+    var cities = ["İzmir", "İstanbul", "Ankara"]
+    var newCities = ["Aydın",...cities]
+    console.log('new cities', newCities);
+
+
+    // JSON.parse ve JSON.stringify
+
+    var user = {
+        name : "Çağatay",
+        surname: "Yıldız",
+        age: 18
+    }
+
+    console.log("1",user);
+
+    //JSON.stringify ile bir javascript objesini JSON a çevirdim
+    var jsonData = JSON.stringify(user)
+    console.log("2",jsonData);
+
+
+    //JSON.parse ile bir json objesini javascript objesine çeviriyorum
+    var jsObject = JSON.parse(jsonData);
+    console.log("3",jsObject);
+
+</script>
+
+</html>

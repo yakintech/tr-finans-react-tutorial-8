@@ -9,6 +9,7 @@ import HomePage from "./pages/HomePage";
 import NotFound from "./pages/NotFound";
 import ProductDetailPage from "./pages/ProductDetailPage";
 import ProductsPage from "./pages/ProductsPage";
+import SupplierPage from "./pages/supplier/SupplierPage";
 
 function App() {
 
@@ -22,6 +23,7 @@ function App() {
           <li><Link to='/contact'>Contact</Link></li>
           <li><Link to='/products'>Products</Link></li>
           <li><Link to='/products/add'>Add Product</Link></li>
+          <li><Link to='/suppliers'>Suppliers</Link></li>
 
 
       </ul>
@@ -35,6 +37,7 @@ function App() {
         <Route path="/products" element={<ProductsPage/>} />
         <Route path="/products/:id" element={<ProductDetailPage/>} />
         <Route path="/products/add" element={<AddProductPage/>} />
+        <Route path="/suppliers" element={<SupplierPage/>} />
 
         <Route path='*' element={<NotFound/>} />
 
