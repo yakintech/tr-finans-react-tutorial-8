@@ -6,6 +6,8 @@ import CategoryDetail from "./pages/CategoryDetail";
 import ContactPage from "./pages/ContactPage";
 import HomePage from "./pages/HomePage";
 import NotFound from "./pages/NotFound";
+import ProductDetailPage from "./pages/ProductDetailPage";
+import ProductsPage from "./pages/ProductsPage";
 
 function App() {
 
@@ -13,10 +15,12 @@ function App() {
   return <>
 
 
-      <ul>
+      <ul style={{display:'flex', justifyContent:'space-between'}}>
           <li><Link to='/'>Home</Link></li>
           <li><Link to='/about'>About</Link></li>
           <li><Link to='/contact'>Contact</Link></li>
+          <li><Link to='/products'>Products</Link></li>
+
       </ul>
 
       <Routes>
@@ -25,6 +29,9 @@ function App() {
         <Route path="/contact" element={<ContactPage/>} />
         <Route path="/categories" element={<AxiosGetSample/>} />
         <Route path='/categories/:id/:subid' element={<CategoryDetail/>} />
+        <Route path="/products" element={<ProductsPage/>} />
+        <Route path="/products/:id" element={<ProductDetailPage/>} />
+
         <Route path='*' element={<NotFound/>} />
 
       </Routes>

@@ -1,9 +1,21 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 
 function AboutPage() {
-  return (
-    <div>AboutPage</div>
-  )
+
+  useEffect(() => {
+    
+   var interval = setInterval(() => {
+      console.log('Hello');
+    }, 1000)
+  
+    return () => {
+        clearInterval(interval)
+    }
+  }, [])
+  
+
+  return (<>
+  </>)
 }
 
 export default AboutPage
