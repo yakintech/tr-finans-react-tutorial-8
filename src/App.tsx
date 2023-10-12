@@ -14,10 +14,11 @@ import Intro from "./mui/Intro";
 import GridSample from "./mui/GridSample";
 import { Container } from "@mui/material";
 import AddCategory from "./mui/AddCategory";
+import ProductsDataGrid from "./mui/ProductsDataGrid";
 
 function App() {
 
-  return <AddCategory/>
+  return <ProductsDataGrid/>
 
   return <>
 
