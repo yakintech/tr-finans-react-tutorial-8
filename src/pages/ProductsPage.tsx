@@ -3,6 +3,7 @@ import React, { useContext, useEffect, useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom';
 import { ProductModel } from './ProductModel';
 import { FavoritesContext, FavoritesContextType } from '../contextSample/FavoritesContext';
+import { Cart, CartContext, CartContextType } from '../contextSample/CartContext';
 
 function ProductsPage() {
   //web servisten ürünleri alıp table da listeleyeceğim.
@@ -10,6 +11,7 @@ function ProductsPage() {
   const [products, setProducts] = useState<ProductModel[]>([]);
 
   const { favorites, setFavorites } = useContext(FavoritesContext) as FavoritesContextType;
+  const { cart, setCart } = useContext(CartContext) as CartContextType;
 
   const navigate = useNavigate();
 
@@ -53,6 +55,32 @@ function ProductsPage() {
 
   }
 
+
+  const addtocart = (item: any) => {
+
+    //eğer ürün daha önce sepete eklenmişse QUANTITY bir artsın. eklenmemişse QUANTITY 1 olarak sepete eklensin
+
+    var cartControl = cart.find(q => q.id == item.id);
+
+    if (cartControl) {
+      cartControl.quantity = cartControl.quantity + 1;
+      setCart([...cart])
+    }
+    else {
+      var newCartItem: Cart = {
+        id: item.id,
+        name: item.name,
+        quantity : 1,
+        unitPrice : item.unitPrice
+      }
+
+      setCart([...cart, newCartItem]);
+
+    }
+
+
+  }
+
   return (<>
     <h1>Length: {products.length}</h1>
     <table>
@@ -74,6 +102,7 @@ function ProductsPage() {
               <td><button onClick={() => deleteProduct(item.id)}>Delete</button></td>
               <td><button onClick={() => navigate(`/Products/${item.id}`)}>Go to detail</button></td>
               <td><button onClick={() => addtofav(item)}>Add to fav</button></td>
+              <td><button onClick={() => addtocart(item)}>Add to cart</button></td>
 
             </tr>
           })

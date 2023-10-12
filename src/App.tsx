@@ -12,7 +12,7 @@ import ProductsPage from "./pages/ProductsPage";
 import SupplierPage from "./pages/supplier/SupplierPage";
 import Intro from "./mui/Intro";
 import GridSample from "./mui/GridSample";
-import {  Container } from "@mui/material";
+import { Container } from "@mui/material";
 import AddCategory from "./mui/AddCategory";
 import ProductsDataGrid from "./mui/ProductsDataGrid";
 import Style1 from "./styling/Style1";
@@ -20,8 +20,17 @@ import Box from "./styling/Box";
 import Style3 from "./styling/Style3";
 import StyleCompSample from "./styling/StyleCompSample";
 import Favorites from "./pages/Favorites";
+import CartPage from "./pages/CartPage";
+import { useContext } from "react";
+import { CartContext, CartContextType } from "./contextSample/CartContext";
 
 function App() {
+
+  const { cart } = useContext(CartContext) as CartContextType;
+
+
+  // return <Parent><Child/></Parent>
+
 
   return <>
 
@@ -31,6 +40,7 @@ function App() {
       <li><Link to='/about'>About</Link></li>
       <li><Link to='/contact'>Contact</Link></li>
       <li><Link to='/products'>Products</Link></li>
+      <li><Link to='/cart'>Cart <span style={{color:'red'}}>({cart.length})</span></Link></li>
       <li><Link to='/products/add'>Add Product</Link></li>
       <li><Link to='/suppliers'>Suppliers</Link></li>
       <li><Link to='/favorites'>Favorites</Link></li>
@@ -49,7 +59,7 @@ function App() {
       <Route path="/products/add" element={<AddProductPage />} />
       <Route path="/suppliers" element={<SupplierPage />} />
       <Route path="/favorites" element={<Favorites />} />
-
+      <Route path="/cart" element={<CartPage />} />
 
       <Route path='*' element={<NotFound />} />
 
@@ -63,4 +73,24 @@ function App() {
 
 export default App;
 
-//props, useState, useEffect
+
+
+
+function Parent({children}: any){
+
+  //
+  //
+  //
+  if(true){
+    return children;
+  }
+  else{
+    return <h1>Yetkisiz Erişim</h1>
+  }
+
+}
+
+
+function Child(){
+  return <h1>Hello Child Comp</h1>
+}
