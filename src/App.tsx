@@ -10,40 +10,45 @@ import NotFound from "./pages/NotFound";
 import ProductDetailPage from "./pages/ProductDetailPage";
 import ProductsPage from "./pages/ProductsPage";
 import SupplierPage from "./pages/supplier/SupplierPage";
+import Intro from "./mui/Intro";
+import GridSample from "./mui/GridSample";
+import { Container } from "@mui/material";
+import AddCategory from "./mui/AddCategory";
 
 function App() {
 
+  return <AddCategory/>
 
   return <>
 
 
-      <ul style={{display:'flex', justifyContent:'space-between'}}>
-          <li><Link to='/'>Home</Link></li>
-          <li><Link to='/about'>About</Link></li>
-          <li><Link to='/contact'>Contact</Link></li>
-          <li><Link to='/products'>Products</Link></li>
-          <li><Link to='/products/add'>Add Product</Link></li>
-          <li><Link to='/suppliers'>Suppliers</Link></li>
+    <ul style={{ display: 'flex', justifyContent: 'space-between' }}>
+      <li><Link to='/'>Home</Link></li>
+      <li><Link to='/about'>About</Link></li>
+      <li><Link to='/contact'>Contact</Link></li>
+      <li><Link to='/products'>Products</Link></li>
+      <li><Link to='/products/add'>Add Product</Link></li>
+      <li><Link to='/suppliers'>Suppliers</Link></li>
 
 
-      </ul>
+    </ul>
 
-      <Routes>
-        <Route path="/" element={<HomePage/>} />
-        <Route path="/about" element={<AboutPage/>} />
-        <Route path="/contact" element={<ContactPage/>} />
-        <Route path="/categories" element={<AxiosGetSample/>} />
-        <Route path='/categories/:id/:subid' element={<CategoryDetail/>} />
-        <Route path="/products" element={<ProductsPage/>} />
-        <Route path="/products/:id" element={<ProductDetailPage/>} />
-        <Route path="/products/add" element={<AddProductPage/>} />
-        <Route path="/suppliers" element={<SupplierPage/>} />
+    <Routes>
+      <Route path="/" element={<HomePage />} />
+      <Route path="/about" element={<AboutPage />} />
+      <Route path="/contact" element={<ContactPage />} />
+      <Route path="/categories" element={<AxiosGetSample />} />
+      <Route path='/categories/:id/:subid' element={<CategoryDetail />} />
+      <Route path="/products" element={<ProductsPage />} />
+      <Route path="/products/:id" element={<ProductDetailPage />} />
+      <Route path="/products/add" element={<AddProductPage />} />
+      <Route path="/suppliers" element={<SupplierPage />} />
 
-        <Route path='*' element={<NotFound/>} />
+      <Route path='*' element={<NotFound />} />
 
-      </Routes>
+    </Routes>
 
-      <p>Footer</p>
+    <p>Footer</p>
 
 
   </>
