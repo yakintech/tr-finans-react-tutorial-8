@@ -12,13 +12,17 @@ import ProductsPage from "./pages/ProductsPage";
 import SupplierPage from "./pages/supplier/SupplierPage";
 import Intro from "./mui/Intro";
 import GridSample from "./mui/GridSample";
-import { Container } from "@mui/material";
+import {  Container } from "@mui/material";
 import AddCategory from "./mui/AddCategory";
 import ProductsDataGrid from "./mui/ProductsDataGrid";
+import Style1 from "./styling/Style1";
+import Box from "./styling/Box";
+import Style3 from "./styling/Style3";
+import StyleCompSample from "./styling/StyleCompSample";
 
 function App() {
 
-  return <ProductsDataGrid/>
+  return <StyleCompSample/>
 
   return <>
 
