@@ -19,6 +19,7 @@ import Style1 from "./styling/Style1";
 import Box from "./styling/Box";
 import Style3 from "./styling/Style3";
 import StyleCompSample from "./styling/StyleCompSample";
+import Favorites from "./pages/Favorites";
 
 function App() {
 
@@ -32,6 +33,7 @@ function App() {
       <li><Link to='/products'>Products</Link></li>
       <li><Link to='/products/add'>Add Product</Link></li>
       <li><Link to='/suppliers'>Suppliers</Link></li>
+      <li><Link to='/favorites'>Favorites</Link></li>
 
 
     </ul>
@@ -46,6 +48,8 @@ function App() {
       <Route path="/products/:id" element={<ProductDetailPage />} />
       <Route path="/products/add" element={<AddProductPage />} />
       <Route path="/suppliers" element={<SupplierPage />} />
+      <Route path="/favorites" element={<Favorites />} />
+
 
       <Route path='*' element={<NotFound />} />
 

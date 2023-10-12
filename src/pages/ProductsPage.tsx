@@ -1,12 +1,15 @@
 import axios from 'axios';
-import React, { useEffect, useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom';
 import { ProductModel } from './ProductModel';
+import { FavoritesContext, FavoritesContextType } from '../contextSample/FavoritesContext';
 
 function ProductsPage() {
   //web servisten ürünleri alıp table da listeleyeceğim.
 
   const [products, setProducts] = useState<ProductModel[]>([]);
+
+  const { favorites, setFavorites } = useContext(FavoritesContext) as FavoritesContextType;
 
   const navigate = useNavigate();
 
@@ -35,6 +38,17 @@ function ProductsPage() {
           loadProducts();
         })
     }
+  }
+
+
+  const addtofav = (item: any) => {
+
+    var favControl = favorites.find(q => q.id == item.id)
+
+    if (!favControl)
+      setFavorites([...favorites, item])
+    else
+      alert('Bu ürün zaten favorilerde mevcut!')
 
 
   }
@@ -59,6 +73,7 @@ function ProductsPage() {
               <td>{item.unitPrice}</td>
               <td><button onClick={() => deleteProduct(item.id)}>Delete</button></td>
               <td><button onClick={() => navigate(`/Products/${item.id}`)}>Go to detail</button></td>
+              <td><button onClick={() => addtofav(item)}>Add to fav</button></td>
 
             </tr>
           })
