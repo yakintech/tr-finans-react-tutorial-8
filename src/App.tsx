@@ -22,8 +22,6 @@ import StyleCompSample from "./styling/StyleCompSample";
 
 function App() {
 
-  return <StyleCompSample/>
-
   return <>
 
 
