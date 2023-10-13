@@ -23,13 +23,14 @@ import Favorites from "./pages/Favorites";
 import CartPage from "./pages/CartPage";
 import { useContext } from "react";
 import { CartContext, CartContextType } from "./contextSample/CartContext";
+import ParentComponent from "./memoSample/ParentComponent";
+import RefHook from "./pages/RefHook";
+import QuerySample from "./querySample/QuerySample";
 
 function App() {
 
   const { cart } = useContext(CartContext) as CartContextType;
 
-
-  // return <Parent><Child/></Parent>
 
 
   return <>
@@ -44,6 +45,9 @@ function App() {
       <li><Link to='/products/add'>Add Product</Link></li>
       <li><Link to='/suppliers'>Suppliers</Link></li>
       <li><Link to='/favorites'>Favorites</Link></li>
+      <li><Link to='/memo'>Memo Sample</Link></li>
+      <li><Link to='/ref'>Ref Sample</Link></li>
+      <li><Link to='/query'>Query Sample</Link></li>
 
 
     </ul>
@@ -60,6 +64,10 @@ function App() {
       <Route path="/suppliers" element={<SupplierPage />} />
       <Route path="/favorites" element={<Favorites />} />
       <Route path="/cart" element={<CartPage />} />
+      <Route path="/memo" element={<ParentComponent/>} />
+      <Route path="/ref" element={<RefHook/>} />
+      <Route path="/query" element={<QuerySample/>} />
+
 
       <Route path='*' element={<NotFound />} />
 
