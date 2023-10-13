@@ -26,13 +26,18 @@ import { CartContext, CartContextType } from "./contextSample/CartContext";
 import ParentComponent from "./memoSample/ParentComponent";
 import RefHook from "./pages/RefHook";
 import QuerySample from "./querySample/QuerySample";
+import { UseGithub } from "./pages/UseGithub";
 
 function App() {
 
   const { cart } = useContext(CartContext) as CartContextType;
 
+  const { user, isLoading, error } = UseGithub('yakintech');
 
-
+  console.log('User ', user);
+  console.log('isLoading ', isLoading);
+  console.log('error ', error);
+  
   return <>
 
 
@@ -41,7 +46,7 @@ function App() {
       <li><Link to='/about'>About</Link></li>
       <li><Link to='/contact'>Contact</Link></li>
       <li><Link to='/products'>Products</Link></li>
-      <li><Link to='/cart'>Cart <span style={{color:'red'}}>({cart.length})</span></Link></li>
+      <li><Link to='/cart'>Cart <span style={{ color: 'red' }}>({cart.length})</span></Link></li>
       <li><Link to='/products/add'>Add Product</Link></li>
       <li><Link to='/suppliers'>Suppliers</Link></li>
       <li><Link to='/favorites'>Favorites</Link></li>
@@ -64,9 +69,9 @@ function App() {
       <Route path="/suppliers" element={<SupplierPage />} />
       <Route path="/favorites" element={<Favorites />} />
       <Route path="/cart" element={<CartPage />} />
-      <Route path="/memo" element={<ParentComponent/>} />
-      <Route path="/ref" element={<RefHook/>} />
-      <Route path="/query" element={<QuerySample/>} />
+      <Route path="/memo" element={<ParentComponent />} />
+      <Route path="/ref" element={<RefHook />} />
+      <Route path="/query" element={<QuerySample />} />
 
 
       <Route path='*' element={<NotFound />} />
@@ -84,21 +89,21 @@ export default App;
 
 
 
-function Parent({children}: any){
+function Parent({ children }: any) {
 
   //
   //
   //
-  if(true){
+  if (true) {
     return children;
   }
-  else{
+  else {
     return <h1>Yetkisiz Erişim</h1>
   }
 
 }
 
 
-function Child(){
+function Child() {
   return <h1>Hello Child Comp</h1>
 }
